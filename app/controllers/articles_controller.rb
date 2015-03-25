@@ -2,11 +2,11 @@ class ArticlesController < ApplicationController
   http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
 
   def index
+    flash[:req_ip] = "IP Address = %s" % request.remote_ip # TODO : Multilingual/I18n
     @articles = Article.all
   end
 
   def show
-    flash[:req_ip] = "IP Address = %s" % request.remote_ip # TODO : Multilingual/I18n
     @article = Article.find(params[:id])
   end
 
