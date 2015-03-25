@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)
+    flash[:notice] = "创建评论成功" # TODO : Multilingual/I18n
     redirect_to article_path(@article)
   end
 
@@ -11,6 +12,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy
+    flash[:notice] = "删除评论成功" # TODO : Multilingual/I18n
     redirect_to article_path(@article)
   end
 

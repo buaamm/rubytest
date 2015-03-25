@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    flash[:notice] = "IP Address = %s" % request.remote_ip # TODO : Multilingual/I18n
     @article = Article.find(params[:id])
   end
 
@@ -20,6 +21,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
+      flash[:notice] = "创建成功" # TODO : Multilingual/I18n
       redirect_to @article
     else
       render 'new'
@@ -28,7 +30,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    if @article.update(article_params)
+    if @article.update_attributes(article_params)
+      flash[:notice] = "更新成功" # TODO : Multilingual/I18n
       redirect_to @article
     else
       render 'edit'
@@ -38,6 +41,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
+    flash[:notice] = "删除成功" # TODO : Multilingual/I18n
     redirect_to articles_path
   end
 
