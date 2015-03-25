@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    flash[:notice] = "IP Address = %s" % request.remote_ip # TODO : Multilingual/I18n
+    flash[:req_ip] = "IP Address = %s" % request.remote_ip # TODO : Multilingual/I18n
     @article = Article.find(params[:id])
   end
 
