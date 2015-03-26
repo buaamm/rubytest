@@ -4,7 +4,11 @@ class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)
-    flash[:notice] = "创建评论成功" # TODO : Multilingual/I18n
+    if @comment.id
+      flash[:notice] = "创建评论成功" # TODO : Multilingual/I18n
+    else
+      flash[:error] = "创建评论失败" # TODO : Multilingual/I18n
+    end
     redirect_to article_path(@article)
   end
 
