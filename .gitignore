@@ -8,6 +8,9 @@
 /.bundle
 /config/secrets.yml
 
+# Ignore image files
+/public/system
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal

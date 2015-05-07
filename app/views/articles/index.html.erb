@@ -26,3 +26,25 @@
 </table>
 
   <p style="color: red"><%= flash[:req_ip] %></p>
+  <p style="text-align:center;">
+    <iframe height="401" width="606" src="http://player.youku.com/embed/XOTIzMzUzNjgw" frameborder="0"><br />
+    </iframe>
+  </p>
+  <p style="text-align:center;">
+    <iframe height="401" width="606" src="http://player.youku.com/embed/XMTUxNTEwOTc2" frameborder="0"><br />
+    </iframe>
+  </p>
+  <p style="text-align:center;">
+    <iframe height="401" width="606" src="http://player.youku.com/embed/XOTEwMDI4MzI4" frameborder="0"><br />
+    </iframe>
+  </p>
+
+  <%= render 'youku', :code => "XMTUxNTEwOTc2", :title => "SomeTitle From Youku" %>
+  <%= render 'youku', :code => "XOTEwMDI4MzI4", :title => "Another Video" %>
+
+    <h1>Video from Bilibili</h1>
+      <p>
+        <div class="video" id="bilibili_video" width="600px">
+          <embed class="videoin" width="720" height="1000" src="http://static.hdslb.com/miniloader.swf?aid=1738367&amp;page=1" allowFullScreen="true" quality="high" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+        </div>
+      </p>

@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 gem 'execjs'
 gem 'therubyracer'
-
+gem 'rmagick', '~> 2.14.0'
+gem 'carrierwave'
+gem "paperclip", "~> 4.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

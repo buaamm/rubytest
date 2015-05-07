@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :articles do
       resources :comments
   end
+  resources :users
 
   # Example resource route with options:
   #   resources :products do

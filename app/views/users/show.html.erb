@@ -1,0 +1,20 @@
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p> 
+
+<p>
+  <strong>ID:</strong>
+  <%= @user.id %>
+</p>
+
+<p>
+Original<%= image_tag @user.avatar.url %>
+Medium<%= image_tag @user.avatar.url(:medium) %>
+Thumb<%= image_tag @user.avatar.url(:thumb) %>
+</p>
+
+<%= link_to 'Back to Users', users_path %>
+<%= link_to 'Edit', edit_user_path(@user) %>
+

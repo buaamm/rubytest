@@ -1,0 +1,36 @@
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this user from being saved. They were:
+    </h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+function add() {
+  document.getElementById("file_list").innerHTML += '<input type="file" name="user[list][]" />';
+}
+</script>
+<p>
+  <%= f.label 'username', :'Input username:' %><br>
+  <%= f.text_field :username %>
+</p>
+
+<p id="file_list">
+  <input type="file" name="user[list][]" />
+</p>
+<p>
+  <input type="button" value="add" onclick="add()"/>
+</p>
+
+
+
+

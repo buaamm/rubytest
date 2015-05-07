@@ -1,0 +1,27 @@
+
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@user.errors.count, "error") %>
+                prohibited this user from being saved. They were:
+            </h2>
+            <ul>
+                <% @user.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+
+    <p>
+        <%= f.label 'username', :'Input username:' %><br>
+        <%= f.text_field :username %>
+    </p>
+
+    <p>
+        <%= f.file_field :avatar %>
+    </p>
+
+
+
