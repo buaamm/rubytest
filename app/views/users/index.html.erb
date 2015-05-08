@@ -1,6 +1,10 @@
 <h1>Listing users</h1>
 
 <%= link_to 'New user', new_user_path %>
+<%= request.user_agent.downcase %>
+<% if request.user_agent.downcase.include?"android" %>
+  <p> You are using Android </p>
+<% end %>
 <table>
     <tr>
         <th>ID</th>
