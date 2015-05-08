@@ -1,0 +1,50 @@
+<h1>Listing articles</h1>
+
+<%= link_to 'New article', new_article_path %>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Text</th>
+        <th>CreateDate</th>
+        <th colspan="3"></th>
+    </tr>
+
+    <% @articles.each do |article| %>
+        <tr>
+            <td><%= article.id %></td>
+            <td><%= article.title %></td>
+            <td><%= article.text %></td>
+            <td><%= article.created_at %></td>
+            <td><%= link_to 'Show', article_path(article) %></td>
+            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+            <td><%= link_to 'Destroy', article_path(article), method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+            </td>
+        </tr>
+    <% end %>
+</table>
+
+  <p style="color: red"><%= flash[:req_ip] %></p>
+  <p style="text-align:center;">
+    <iframe height="401" width="606" src="http://player.youku.com/embed/XOTIzMzUzNjgw" frameborder="0"><br />
+    </iframe>
+  </p>
+
+  <%= render 'youku', :code => "XMTUxNTEwOTc2", :title => "Embeded From Youku" %>
+  <%-# <%= render 'youku', :code => "XOTEwMDI4MzI4", :title => "Another embeded Video" -%>
+
+  <p>[HTML 5 Test 1]</p>
+  <video id="youku-html5-player-video" width="100%" height="100%" x-webkit-airplay="allow" controls="" autoplay="" preload="" src="http://v.youku.com/player/getRealM3U8/vid/XOTEwMDI4MzI4/type/video.m3u8"> </video>
+  <p>[HTML 5 Test 2]</p>
+  <video id="youku-html5-player-video" width="100%" height="100%" x-webkit-airplay="allow" controls="" autoplay="" preload="" src="http://v.youku.com/player/getRealM3U8/vid/XOTEwMDI4MzI4/type/mp4/v.m3u8"> </video>
+
+    <p>Embeded Video from Bilibili</p>
+      <p>
+        <div class="video" id="bilibili_video" style="text-align:center">
+          <embed class="videoin" width="640" height="400" src="http://static.hdslb.com/miniloader.swf?aid=1738367&amp;page=1" allowFullScreen="true" quality="high" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+        </div>
+      </p>
+      <p>HTML5 Video From Bilibili</p>
+      <video id="bilibili_helper_html5_player_video" autobuffer="true" poster="http://i2.hdslb.com/video/af/afe6e5e049a0d25fde59ffabef08700d.jpg"><source src="http://cc.acgvideo.com/201505081417/89055a20b7cb96c8ddda5d104a0ea15e/7/78/3580194-1hd.mp4" type="video/mp4"></video>
+

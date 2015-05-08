@@ -1,10 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Posts: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ActionName= [<%= controller.action_name %>]</title>
+  
+  <%= stylesheet_link_tag 'css/base.min' %>
+  <%= javascript_include_tag "js/ABPlayer" %>
+  <%= javascript_include_tag "js/CommentCoreLibrary.min" %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -12,8 +15,9 @@
 </head>
 <body style="background: #EEEEEE;">
 
-  <p style="color: green"><%= flash[:notice] %></p>
-  <p style="color: red"><%= flash[:error] %></p>
+  <p style="color: green; border: thin dotted green; margin:0;"><%= flash[:notice] %></p>
+  <p style="color: red; border: thin dotted red; margin:0;"><%= flash[:error] %></p>
+  <p style="color: blue; border:thin dotted blue; margin:0; font-size:0.5em;"><%= flash[:req_ip] %></p>
 
   <%= yield %>
 
