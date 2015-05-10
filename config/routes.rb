@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  #get 'images' => 'images#index'
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -17,7 +20,14 @@ Rails.application.routes.draw do
   resources :articles do
       resources :comments
   end
+
+  resources :images
+  resources :albums do
+      resources :images
+  end
+
   resources :users
+
 
   # Example resource route with options:
   #   resources :products do
