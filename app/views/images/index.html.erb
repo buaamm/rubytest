@@ -8,6 +8,7 @@
       <th>ID</th>
       <th>Name</th>
       <th>Description</th>
+      <th>File Size</th>
 
       <th colspan="3"></th>
     </tr>
@@ -19,6 +20,10 @@
         <td><%= image.id %></td>
         <td><%= image.url %></td>
         <td><%= image.description %></td>
+        <td><% if image.picture_file_size > 1024*1024 %><%= (image.picture_file_size/1024/1024).to_s + "MB" %>
+          <% else %><%= "[" + (image.picture_file_size/1024).to_s + "KB]" %><% end %>
+        </td>
+
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
         <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
