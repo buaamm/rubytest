@@ -7,16 +7,12 @@
 
 <p>
   Original size: <%= @value %>
-
   <%= link_to 'Link', @image.picture.url(:original) %>
   <%= link_to 'OriginalView', original_image_path(@image) %>
-
 </p>
 
-<p>
-  Medium <%= image_tag @image.picture.url(:medium) %>
-  Small <%= image_tag @image.picture.url(:small) %>
-</p>
+<p>Medium <%= image_tag @image.picture.url(:medium) %></p>
+<p>Small <%= image_tag @image.picture.url(:small) %></p>
 
 <%= link_to 'Back to Images', images_path %>
 <%= link_to 'Edit', edit_image_path(@image) %>

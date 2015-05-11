@@ -1,9 +1,39 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @album.name %>
 </p>
+
+<p><strong>AlbumID:</strong><%= @album.id %></p> 
+<p><strong>Name:</strong><%= @album.name %></p>
+<p><strong>Description:</strong><%= @album.description %></p> 
+
+
+<table>
+  <thead>
+    <tr>
+      <th>LargeView</th>
+      <th>OriginalView</th>
+      <th>ImageID</th>
+      <th>Description</th>
+      <th>File Size</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @album.images.each do |image| %>
+      <tr>
+        <td><%= image_tag image.picture.url(:large) %></td>
+        <td><%= link_to '查看原图', original_image_path(image) %></td>
+        <td><%= image.id %></td>
+        <td><%= image.description %></td>
+        <td><% if image.picture_file_size > 1024*1024 %><%= (image.picture_file_size/1024/1024).to_s + "MB" %>
+          <% else %><%= "[" + (image.picture_file_size/1024).to_s + "KB]" %><% end %>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>

@@ -44,14 +44,17 @@ class AlbumsController < ApplicationController
   # PATCH/PUT /albums/1
   # PATCH/PUT /albums/1.json
   def update
-    respond_to do |format|
-      if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
-        format.json { render :show, status: :ok, location: @album }
-      else
-        format.html { render :edit }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+    @album.images.each_with_index do |i,d|
+      i.update(:description => params[:album][:images][d][:description])
+    end
+
+    if @album.update(album_params)
+      if params[:pictures]
+        params[:pictures].each { |p| @album.images.create(picture: p) }
       end
+      redirect_to @album, notice: 'Album was successfully updated.'
+    else
+      render :edit
     end
   end
 
