@@ -30,7 +30,7 @@ class AlbumsController < ApplicationController
       if @album.save
         if params[:pictures]
           #=====  Magic!!!!!!!!
-          params[:pictures].each { |p| @album.images.create(picture: p) }
+          params[:pictures].each { |p| @album.images.create(picture: p, description: "") }
         end
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
         format.json { render :show, status: :created, location: @album }
