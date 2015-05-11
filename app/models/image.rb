@@ -2,7 +2,7 @@ class Image < ActiveRecord::Base
 
   belongs_to :album
   has_attached_file :picture,
-      :styles => { :large => "450x450>", :medium => "300x300>", :small => "100x100>" }
+      :styles => { :large => "450x900>", :medium => "300x600>", :small => "100x200>" }
       #:path => ":rails_root/public/images/:id/:filename",
       #:url  => "/images/:id/:filename"
   # validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
