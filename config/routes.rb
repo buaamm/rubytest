@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   #get 'images' => 'images#index'
+  get 'images/:id/original' => 'images#original', as: :original_image
 
   get 'welcome/index'
 

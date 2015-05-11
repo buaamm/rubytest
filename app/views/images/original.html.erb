@@ -1,0 +1,12 @@
+<h1>Images#show original</h1>
+
+<p><strong>ID:</strong><%= @image.id %></p> 
+<p><strong>Url:</strong><%= @image.url %></p> 
+<p><strong>Description:</strong><%= @image.description %></p>
+
+<p>
+  <%= image_tag @image.picture.url(:original), :width => "720" %>
+</p>
+
+<%= link_to 'Back to Images', images_path %>
+

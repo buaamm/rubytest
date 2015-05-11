@@ -1,2 +1,18 @@
 <h1>Images#show</h1>
-<p>Find me in app/views/images/show.html.erb</p>
+
+<p><strong>ID:</strong><%= @image.id %></p> 
+<p><strong>Url:</strong><%= @image.url %></p> 
+<p><strong>Description:</strong><%= @image.description %></p>
+
+
+<p>
+  Original size: <%= @image.picture_file_size %>
+  <%= link_to 'View', @image.picture.url(:original) %>
+  <%= link_to 'Original', original_image_path(@image) %>
+  Medium <%= image_tag @image.picture.url(:medium) %>
+  Small <%= image_tag @image.picture.url(:small) %>
+</p>
+
+<%= link_to 'Back to Images', images_path %>
+<%= link_to 'Edit', edit_image_path(@image) %>
+

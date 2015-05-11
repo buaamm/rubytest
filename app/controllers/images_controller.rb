@@ -24,8 +24,13 @@ class ImagesController < ApplicationController
   end
 
   def edit
+    @image= Image.find(params[:id])
   end
 
   def show
+    @image= Image.find(params[:id])
+  end
+  def original
+    @image= Image.find(params[:id])
   end
 end
