@@ -29,10 +29,11 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
-    @value = ((@image.picture_file_size/1024.0/102.4).round/10.0).to_s + "MB"
+    @size = ((@image.picture_file_size/1024.0/102.4).round/10.0).to_s + "MB"
 
   end
   def original
     @image= Image.find(params[:id])
+    @size = ((@image.picture_file_size/1024.0/102.4).round/10.0).to_s + "MB"
   end
 end

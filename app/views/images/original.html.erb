@@ -1,12 +1,7 @@
-<h1>Images#show original</h1>
+<h3>请注意流量，本图<%= @size %></h3>
+<p>[<%= @image.id %>]<%= @image.description %></p>
 
-<p><strong>ID:</strong><%= @image.id %></p> 
-<p><strong>Url:</strong><%= @image.url %></p> 
-<p><strong>Description:</strong><%= @image.description %></p>
+<p><%= image_tag @image.picture.url(:original), :width => "450" %></p>
 
-<p>
-  <%= image_tag @image.picture.url(:original), :width => "450" %>
-</p>
-
-<%= link_to 'Back to Images', images_path %>
+<%= link_to 'Back', album_path(@image.album_id, anchor: @image.id) %>
 

@@ -1,8 +1,11 @@
 <h1><%= @album.name %></h1>
 <h3><%= @album.created_at %> [<%= @album.id %>]</h5>
 
-<p><%= @album.description %></p>
+<h4><%= @album.description %></h4>
+
 <% @album.images.each do |image| %>
+  <br>
+  <p id="<%= image.id %>"><%= image.description %></p>
   <p><%= image_tag image.picture.url(:large) %></p>
   <p>[<%= image.id %>]<%= link_to '查看原图', original_image_path(image) %>
     (
@@ -10,7 +13,6 @@
     <% else %><%= "[" + (image.picture_file_size/1024).to_s + "KB]" %><% end %>
     )
   </p>
-  <p><%= image.description %></p>
 <% end %>
 
 
