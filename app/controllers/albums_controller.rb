@@ -10,7 +10,6 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
-    render :show, :layout => 'fixed'
   end
 
   # GET /albums/new
