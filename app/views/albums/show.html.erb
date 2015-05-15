@@ -12,7 +12,7 @@
 
 <% @album.images.each do |image| %>
   <br>
-  <p id="<%= image.id %>" style="white-space:pre-wrap">↓↓<%= image.description %></p> <%#h(image.description).gsub(/\n/, '<br/>').html_safe %>
+  <pre id="<%= image.id %>">↓↓<%= sanitize image.description %></pre> <%#h(image.description).gsub(/\n/, '<br/>').html_safe %>
   
   <p><%= image_tag image.picture.url(:large) %></p>
   <p>[<%= image.id %>]<%= link_to '查看原图', original_image_path(image) %>
