@@ -19,7 +19,7 @@
         <td><%= link_to 'Edit', edit_album_path(album) %></td>
         <td><%= link_to 'Destroy', album_path(album), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>
-          <% album.images.each do |i| %>
+          <% album.images[0,6].each do |i| %>
             <%#= image_tag i.picture.url(:small) %><%#= link_to '查看原图', i.picture.url(:original) %>
             <%= link_to image_tag(i.picture.url(:small)) + ' ', i.picture.url(:original) %>
           <% end %>
