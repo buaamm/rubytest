@@ -1,7 +1,7 @@
 
 <h1>Listing Albums</h1>
 
-<table style="width:1200px;overflow:visible;">
+<table style="width:1200px;overflow:visible;border:1px;">
   <thead>
     <tr>
       <th>ID</th>
@@ -24,7 +24,6 @@
             <%= link_to image_tag(i.picture.url(:small)) + ' ', i.picture.url(:original) %>
           <% end %>
         </td>
-        <td>----------------------------------------------</td>
       </tr>
     <% end %>
   </tbody>
