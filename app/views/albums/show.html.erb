@@ -15,7 +15,7 @@
   <pre class="fix" id="<%= image.id %>">↓↓<%= sanitize image.description %></pre> <%#h(image.description).gsub(/\n/, '<br/>').html_safe %>
   
   <p><%= image_tag image.picture.url(:large) %></p>
-  <p class="button orange">[<%= image.id %>]<%= link_to '查看原图', original_image_path(image) %>
+  <p>[<%= image.id %>]<%= link_to '查看原图', original_image_path(image), class: "button pink" %>
     (
     <% if image.picture_file_size > 1024*1024 %><%= (image.picture_file_size/1024/1024).to_s + "MB" %>
     <% else %><%= "[" + (image.picture_file_size/1024).to_s + "KB]" %><% end %>
