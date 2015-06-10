@@ -1,14 +1,12 @@
 <% content_for :scale do %>
 <% end %>
 
-<div style="width:1200px;">
 
 <h3>请注意流量，本图<%= @size %></h3>
 <p>[<%= @image.id %>]<%= @image.description %></p>
 
 <p><%= image_tag @image.picture.url(:original), width: "450px" %></p>
 
-</div>
 
 <%= link_to 'Back', album_path(@image.album_id, anchor: @image.id) %>
 
