@@ -3,10 +3,18 @@
 
 <h1>Hello, Rails!</h1>
 
-<%= form_tag({action: :upload}, multipart: true) do %>
-  <%= file_field_tag 'video' %>
-  <%= submit_tag nil, :class => 'btn btn-primary' %>
-<% end %>
+<%#= form_tag({action: :upload}, multipart: true) do %>
+  <%#= file_field_tag 'video' %>
+  <%#= submit_tag nil, :class => 'btn btn-primary' %>
+<%# end %>
+<br>
+<br>
+<br>
 
-
-<%= link_to 'My Blog', controller: 'articles' %>
+<%= link_to 'Home Page', welcome_index_path, class: "button gray" %>
+ | 
+<%= link_to 'Articles', articles_path, class: "button orange" %>
+ | 
+<%= link_to 'Albums', albums_path, class: "button orange" %>
+ | 
+<%= link_to 'Upload Videos', videos_path, class: "button orange" %>
