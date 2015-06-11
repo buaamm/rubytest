@@ -8,6 +8,35 @@
   <%= @article.text %>
 </p> 
 
+<% content_for :player do %>
+  <link rel="stylesheet" href="/build/css/base.min.css?1" />
+  <script src="/build/js/CommentCoreLibrary.min.js"></script>
+  <script src="/build/js/ABPlayer.min.js"></script>
+
+    <script type="text/javascript">
+    window.onload=function() {
+      var inst = ABP.create( document.getElementById('load-player'), {
+        'src': document.getElementById('video-1'),
+        'width': 400,
+        'height': 300
+      });
+      CommentLoader('xml/comment-otsukimi.xml', inst.cmManager);
+    }
+    </script>
+<% end %>
+
+<%= File.join(Rails.root, "/public/media/", @article.text) %>
+<%= File.exist?( File.join(Rails.root, "/public/media/", @article.text) ) %>
+
+<% if File.exist?( File.join(Rails.root, "/public/media/", @article.text) ) %>
+  <video id="video-1" autobuffer="true" data-setup="{}" width="400" height="225">
+      <source src="/media/<%= @article.text %>" type="video/mp4">
+      <p>Your browser does not support html5 video!</p>
+    </video>
+    <div id="load-player"></div>
+<% end %>
+
+
 <p>
   <strong>ID:</strong>
   <%= @article.id %>

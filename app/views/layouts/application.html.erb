@@ -5,11 +5,7 @@
   <%= yield :scale %>
   <title>高清旅游-微信版</title>
 
-<!--
-  <link rel="stylesheet" href="/build/css/base.min.css?1" />
-  <script src="/build/js/CommentCoreLibrary.min.js"></script>
-  <script src="/build/js/ABPlayer.min.js"></script> 
--->
+  <%= yield :player %>
 <!-- 
   <link rel="stylesheet" href="/build/css/styles/monokai_sublime.css" />
   <script src="/build/js/highlight.js"></script> 
@@ -28,9 +24,9 @@
 
   </script>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%#= csrf_meta_tags %>
 </head>
 <body style="background: #EEEEEE; width:99%; margin:0; border:medium dotted pink;">
 

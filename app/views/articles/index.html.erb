@@ -27,19 +27,25 @@
 
   <%-# <%= render 'youku', :code => "XOTEwMDI4MzI4", :title => "Another embeded Video" -%>
 
+<% content_for :player do %>
+  <link rel="stylesheet" href="/build/css/base.min.css?1" />
+  <script src="/build/js/CommentCoreLibrary.min.js"></script>
+  <script src="/build/js/ABPlayer.min.js"></script>
 
     <script type="text/javascript">
     window.onload=function() {
       var inst = ABP.create( document.getElementById('load-player'), {
         'src': document.getElementById('video-1'),
-        'width': 800,
-        'height': 522
+        'width': 400,
+        'height': 300
       });
       CommentLoader('xml/comment-otsukimi.xml', inst.cmManager);
     }
     </script>
+<% end %>
+
     <p>Danmaku HTML5</p>
-    <video id="video-1" autobuffer="true" data-setup="{}" width="800" height="450">
+    <video id="video-1" autobuffer="true" data-setup="{}" width="400" height="250">
       <source src="/media/otsukimi_recital.mp4" type="video/mp4">
       <p>Your browser does not support html5 video!</p>
     </video>
@@ -48,12 +54,12 @@
 
 <p><%= link_to 'New Article', new_article_path, class: "button blue" %></p>
 
-
-<%= link_to 'Home Page', welcome_index_path, class: "button orange" %>
- | 
+<p>-</p>
+<p><%= link_to 'Home Page', welcome_index_path, class: "button orange" %> | 
 <%= link_to 'Articles', articles_path, class: "button gray" %>
- | 
-<%= link_to 'Albums', albums_path, class: "button orange" %>
- | 
+</p>
+<p>-</p>
+<p><%= link_to 'Albums', albums_path, class: "button orange" %> | 
 <%= link_to 'Upload Videos', videos_path, class: "button orange" %>
+</p>
 
