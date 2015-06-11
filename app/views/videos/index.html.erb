@@ -1,15 +1,15 @@
 
 <%= form_tag({action: :create}, multipart: true) do %>
-  <%= file_field_tag 'video', class: "button white" %>
+  <%= file_field_tag 'video', class: "cbutton white" %>
   <br><br>
-  <%= submit_tag nil, class: 'button blue' %>
+  <%= submit_tag nil, class: 'cbutton blue' %>
 <% end %>
 
 <p>-</p>
-<p><%= link_to 'Home Page', welcome_index_path, class: "button orange" %> | 
-<%= link_to 'Articles', articles_path, class: "button orange" %>
+<p><%= link_to 'Home Page', welcome_index_path, class: "cbutton orange" %> | 
+<%= link_to 'Articles', articles_path, class: "cbutton orange" %>
 </p>
 <p>-</p>
-<p><%= link_to 'Albums', albums_path, class: "button orange" %> | 
-<%= link_to 'Upload Videos', videos_path, class: "button gray" %>
+<p><%= link_to 'Albums', albums_path, class: "cbutton orange" %> | 
+<%= link_to 'Upload Videos', videos_path, class: "cbutton gray" %>
 </p>
