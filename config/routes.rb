@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'welcome/upload'
+
   #get 'images' => 'images#index'
   get 'images/:id/original' => 'images#original', as: :original_image
 
@@ -18,6 +20,9 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
+
+  resources :videos
+
   resources :articles do
       resources :comments
   end
