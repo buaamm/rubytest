@@ -15,9 +15,9 @@
       <tr>
         <td><%= album.id %></td>
         <td><%= album.name %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album_path(album), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', album, class: "cbutton cblue" %></td>
+        <td><%= link_to 'Edit', edit_album_path(album), class: "cbutton cgray" %></td>
+        <td><%= link_to 'Destroy', album_path(album), class: "cbutton cred", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>
           <% album.images[0,6].each do |i| %>
             <%#= image_tag i.picture.url(:small) %><%#= link_to '查看原图', i.picture.url(:original) %>
@@ -31,13 +31,13 @@
 
 <br>
 
-<p><%= link_to 'New Album', new_album_path, class: "cbutton blue" %></p>
+<p><%= link_to 'New Album', new_album_path, class: "cbutton cblue" %></p>
 
 <p>-</p>
-<p><%= link_to 'Home Page', welcome_index_path, class: "cbutton orange" %> | 
-<%= link_to 'Articles', articles_path, class: "cbutton orange" %>
+<p><%= link_to 'Home Page', welcome_index_path, class: "cbutton corange" %> | 
+<%= link_to 'Articles', articles_path, class: "cbutton corange" %>
 </p>
 <p>-</p>
-<p><%= link_to 'Albums', albums_path, class: "cbutton gray" %> | 
-<%= link_to 'Upload Videos', videos_path, class: "cbutton orange" %>
+<p><%= link_to 'Albums', albums_path, class: "cbutton cgray" %> | 
+<%= link_to 'Upload Videos', videos_path, class: "cbutton corange" %>
 </p>

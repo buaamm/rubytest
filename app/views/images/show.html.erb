@@ -14,6 +14,6 @@
 <p>Medium <%= image_tag @image.picture.url(:medium) %></p>
 <p>Small <%= image_tag @image.picture.url(:small) %></p>
 
-<%= link_to 'Back to Images', images_path %>
-<%= link_to 'Edit', edit_image_path(@image) %>
+<%= link_to 'Back to Images', images_path, class: 'cbutton cgray' %>
+<%= link_to 'Edit', edit_image_path(@image), class: 'cbutton cgray' %>
 

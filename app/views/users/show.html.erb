@@ -15,6 +15,6 @@ Medium<%= image_tag @user.avatar.url(:medium) %>
 Thumb<%= image_tag @user.avatar.url(:thumb) %>
 </p>
 
-<%= link_to 'Back to Users', users_path %>
-<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Back to Users', users_path, class: 'cbutton cgray' %>
+<%= link_to 'Edit', edit_user_path(@user), class: 'cbutton cgray' %>
 

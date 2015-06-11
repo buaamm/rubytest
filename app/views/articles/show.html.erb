@@ -17,8 +17,8 @@
     window.onload=function() {
       var inst = ABP.create( document.getElementById('load-player'), {
         'src': document.getElementById('video-1'),
-        'width': 600,
-        'height': 400
+        'width': 900,
+        'height': 600
       });
       CommentLoader('xml/comment-otsukimi.xml', inst.cmManager);
     }
@@ -48,6 +48,6 @@
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
 
-<%= link_to 'Back to Articles', articles_path, class: "cbutton blue" %>
-<%= link_to 'Edit', edit_article_path(@article), class: "cbutton gray" %>
+<%= link_to 'Back to Articles', articles_path, class: "cbutton cblue" %>
+<%= link_to 'Edit', edit_article_path(@article), class: "cbutton cgray" %>
 

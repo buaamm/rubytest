@@ -24,9 +24,9 @@
           <% else %><%= "[" + (image.picture_file_size/1024).to_s + "KB]" %><% end %>
         </td>
 
-        <td><%= link_to 'Show', image %></td>
-        <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', image, class: 'cbutton cblue' %></td>
+        <td><%= link_to 'Edit', edit_image_path(image), class: 'cbutton cgray' %></td>
+        <td><%= link_to 'Destroy', image, class: 'cbutton cred', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Image', 'images#new' %>
+<%= link_to 'New Image', 'images#new', class: 'cbutton cblue' %>
